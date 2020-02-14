@@ -1,0 +1,65 @@
+<!-- Start Of Navigation Bar -->
+<section id="header">
+    <div class="container-fluid nopadding">
+        <nav class="navbar  navbar-expand-lg navbar-light nopadding">
+            <a class="navbar-brand pl-5 aaj-tak-title"><img class="aaj-tak-logo"
+                    src="assets/img/new2-removebg-preview.png">AAJ TAK</a>
+            <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-white"></span>
+            </button>
+
+            <div class="collapse py-2 navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto topnav">
+                    <li class="nav-item pr-5">
+                        <a class="nav-link px-4 text-white log-out" (click)="goHome()"> LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<!-- End Of Navigation Bar -->
+
+<!-- Start Of News Dashboard -->
+<main>
+    <!-- Container -->
+    <div class="container form-content mt-3">
+        <div class="card col-md-10 main- nopadding">
+            <div class="card-header text-white nopadding">
+                <h3 class="mt-2 nopadding"> NEWS DASHBOARD </h3> 
+            </div>
+            <div class="card-body ">
+
+<form [formGroup]="headform" (ngSubmit)="submitform(headform.value)"
+  class="form row d-block" role="form" autocomplete="off" id="formLogin" novalidate="">
+
+                    
+
+            <ng-multiselect-dropdown class="col-md-6"
+
+                     [formControlName]="'dropdown'" name="dropdown"
+                      [placeholder]="'Select Headline '"
+                      [data]="dropdownList"
+                      [(ngModel)]="selectedItems" 
+                      [settings]="dropdownSettings" 
+                      (onSelect)="onItemSelect($event)"
+                       (onSelectAll)="onSelectAll($event)"
+                       (onDeSelect)="onItemDeSelect($event)"
+                       (onDeSelectAll)="onItemDeSelectAll($event)">
+
+            </ng-multiselect-dropdown>
+                        
+                    
+
+                    <button type="submit" class="btn btn-success btn-lg col-md-6 " id="btnLogin"> Submit </button>
+                </form>
+            </div>
+        </div>
+        <!--/Container-->
+    </div>
+    <!--/Container-->
+</main>
+<!-- End of News Dashboard -->
+<app-footer></app-footer>

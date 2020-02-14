@@ -1,0 +1,137 @@
+<!-- Start Of Navigation Bar -->
+<section id="header">
+  <div class="container-fluid nopadding">
+    <nav class="navbar  navbar-expand-lg navbar-light nopadding">
+      <a class="navbar-brand pl-5 aaj-tak-title"><img class="aaj-tak-logo"
+          src="assets/img/new2-removebg-preview.png">AAJ TAK</a>
+      <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button>
+
+      <div class="collapse py-2 navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto topnav">
+          <li class="nav-item active">
+            <a class="nav-link" (click)="goHome()">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="gotoIndia()">INDIA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="gotoWorld()">WORLD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="gotoSports()">SPORTS</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a (click)="gotoMovies()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              MOVIES
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="gotoBusiness()">BUSINESS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" (click)="gotoContactUs()">CONTACT</a>
+          </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link px-2 text-white log-out" (click)="goHome()"> LOG OUT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- End Of Navigation Bar -->
+
+<!-- Start Of News Dashboard -->
+<main>
+  <!-- Container -->
+  <div class="container dashboard form-content mt-3">
+    <div class="card col-md-10 main-form nopadding">
+      <div class="card-header text-white nopadding">
+        <h3 class="mt-2 nopadding"> NEWS DASHBOARD </h3>
+        
+      </div>
+      <div class="card-body">
+        <form [formGroup]="newsform" (ngSubmit)="submitform(newsform.value)" class="form row" role="form"
+          autocomplete="off" id="formLogin" novalidate="">
+
+          <div class="form-group d-flex col-md-12">
+            <label class="col-md-3 py-1 ">NEWS CATEGORY :</label>
+            <select [(ngModel)]="selected"   [formControlName]="'category'" name="category" class="col-md-9" id="inputState1"
+              class="form-control text-center" (change)="onSelect(newsform.category)">
+              <option value="Select" selected>--Select News Category--</option>
+              <option value="India">INDIA</option>
+              <option value="World">WORLD</option>
+              <option value="Sports">SPORTS</option>
+              <option value="Movies">MOVIES</option>
+              <option value="Business">BUSINESS</option>
+            </select>
+          </div>
+
+          <div class="form-group d-flex col-md-12">
+            <label class="col-md-3 py-1 ">NEWS SUBCATEGORY :</label>
+            <select [formControlName]="'subcategory'" name="subcategory" class="col-md-9 custom-select" id="inputState2"
+              class="form-control text-center">
+              <option value="category1" selected>--Select News Category--</option>
+              <option value="Top News">Top News</option>
+              <option value="Whats Going On">Whats Going On</option>
+            </select>
+          </div>
+
+          <div class="form-group  d-flex col-md-12">
+            <label class="col-md-3 py-1 " for="uname1" style>NEWS HEADLINE&nbsp; :</label>
+            <textarea [formControlName]="'headline'" name="headline" class="col-md-9" type="text" class="form-control"
+              name="uname1" id="uname1"  maxlength="90" required=""></textarea>
+          </div>
+
+          <div class="form-group d-flex col-md-12">
+            <label class="col-md-3 pt-2" for="name">HEADLINE INFO : </label>
+            <textarea [formControlName]="'description'" name="description" class="col-md-9" type="text"
+              class="form-control" maxlength="74" name="uname1" ingd="uname1" required=""></textarea>
+          </div>
+
+          <div class="form-group d-flex col-md-12">
+            <label style="height:60px" class="col-md-3 pt-2 text-right" for="name">HEADLINE PARAGRAH: </label>
+            <textarea style="height:60px" [formControlName]="'paragraph'" name="paragraph" class="col-md-9" type="text"
+              class="form-control"  name="uname1" ingd="uname1" required=""></textarea>
+          </div>
+
+          <div class="form-group d-flex col-md-12">
+            <label  class="col-md-3 pt-2 " for="name">Date And Time </label>
+            <mat-form-field class="col-md-3" style="background-color: white; height: 60px;" >
+              <input  [formControlName]="'dateTime'" name="dateTime" matInput [matDatepicker]="picker" placeholder="Choose a date" style="color:rgb(8, 8, 8);">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          
+
+
+          <div class="form-group d-flex col-md-12">
+            <label class="col-md-3  py-2 " for="name"> UPLOAD NEWS IMAGE:</label>
+            <!-- <img class="mt-4 pl-4" style="width:60px;height:40px" src="assets/img/Attachment.png"
+              (click)="getFile.click"> -->
+            <input style="height: 44px"  name="imgUpload"  (change)="upload($event)" accept=".png,.jpg"  class="col-md-3" class="col-md-4" type="file" class="form-control" name="uname1" required="">
+          </div>
+          <ngx-ui-loader></ngx-ui-loader>
+
+          
+
+          <button type="submit" class="btn btn-success btn-lg col-md-6 " id="btnLogin" >  Submit </button>
+        </form>
+      </div>
+    </div>
+    <!--/Container-->
+  </div>
+  <!--/Container-->
+</main>
+<!-- End of News Dashboard -->
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+<ngx-ui-loader></ngx-ui-loader>
+<app-header></app-header>
+<div class="margin"></div>
+<div class="body">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="assets/img/aajtak-removebg-preview.png" id="icon"
+                    alt="User Icon" />
+                <h1>Aaj Tak News</h1>
+            </div>
+            <!-- gotoNewsDashboard() -->
+            <!-- Login Form -->
+            <form>
+                <input [(ngModel)]="email" type="text" id="login" class="fadeIn second" name="login" placeholder="username">
+                <input [(ngModel)]="password"  type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+                <input  (click)="login()" type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" (click)="goHome() ">Create An Account</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

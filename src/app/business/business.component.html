@@ -1,0 +1,100 @@
+<app-header></app-header>
+<!-- Start Of Container -->
+<div class="container-fluid">
+    <!-- Start Of Box -->
+    <div class="row box p-3">
+        <!-- Start Of Left Box -->
+        <div class=" col-xs-12  col-sm-12 col-md-12 col-lg-6  box1">
+            <!-- Start Of Left News Section -->
+            <div class="news-left">
+                <div class="nav-links d-flex mb-3 nopadding ">
+                    <a style="padding-left:0" class="mr-3" (click)="goHome()">Home</a>
+                    <a style="border-right:none;pointer-events:none;color:#2f07be;">Business</a>
+                </div>
+                <h1 class="title">Business</h1>
+                <h6 class="sub-title" >Latest News Of Market</h6>
+                <h5 class=" px-3 py-1 mt-3 text-center text-white">Top News</h5>
+                <!-- Start Of Left Headline Section -->
+                <div class="news-box  col-12 col-sm-12 col-md-12 col-lg-12  d-block mt-2 nopadding" *ngFor="let data of list">
+   
+                    <div    class=" headline-n-img-box d-flex col-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                          <div   class=" headline-box nopadding col-7 col-sm-7 col-md-7 col-lg-7  d-block ">
+                             <div  ><h4 class="headline   nopadding"><a (click)="gotoBigNews(data.headline)">{{data.headline}}</a></h4></div>
+                             <div  ><p class="headline-para mt-2 mb-0 nopadding ">{{data.description}}</p></div>
+                          </div>
+
+                          
+                          
+                          <div  class="news-img-box col-5 col-sm-5 col-md-5 col-lg-5 nopadding ">
+                            <a (click)="gotoBigNews(data.headline)"><img class="news-img img-responsive" src={{data.imgUpload}}></a>
+                         </div>
+                    </div>
+
+                    
+
+                    <div   class=" date-n-social-icons-box mt-1 d-flex col-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                        <h6 class="date  col-6 col-sm-6 col-md-6 col-lg-6"><i class="fa fa-clock-o clock-icon"></i> {{ data.dateTime.toMillis() | date:'MMMM d, y'}}</h6>
+                        <div  class="social-icons-box d-flex  col-6 col-sm-6 col-md-6 col-lg-6  nopadding">
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/whatsapp.png"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/facebook.png"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/twitter.png"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/instagram.jpg"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/youtube.png"></a>
+                        </div>      
+                    </div>
+                <hr/>    
+                </div>
+                <!-- End Of Left Headline Section -->
+            </div> 
+            <!-- End Of Left News Section -->
+        </div>
+        <!-- End Of Left Box -->
+
+        <!-- Start Of Right Box -->
+        <div class="col-xs-12  col-sm-12 col-md-12 col-lg-6  box2">
+             <div class="adv-box ">
+                 <img class="adv-img" src="assets/img/18281147256927779692.png">
+             </div>
+            <!-- Start Of Right News Section -->
+            <div class="news-right ">
+                <h5 class=" px-3 py-1  text-white">Whats Going On</h5>
+                <!-- Start of Right Headline Section -->
+                <div class="news-box  col-12 col-sm-12 col-md-12 col-lg-12  d-block mt-2 nopadding" *ngFor="let data of list2">
+   
+                    <div    class=" headline-n-img-box d-flex col-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                          <div   class=" headline-box nopadding col-7 col-sm-7 col-md-7 col-lg-7  d-block ">
+                             <div><h4 class="headline   nopadding"><a (click)="gotoBigNews2(data.headline)">{{data.headline}}</a></h4></div>
+                             <div><p class="headline-para mt-2 mb-0 nopadding ">{{data.description}}</p></div>
+                          </div>
+
+                          
+                          
+                          <div  class="news-img-box col-5 col-sm-5 col-md-5 col-lg-5 nopadding ">
+                            <a (click)="gotoBigNews(data.headline)"><img class="news-img img-responsive" src={{data.imgUpload}}></a>
+                         </div>
+                    </div>
+
+                    
+
+                    <div   class=" date-n-social-icons-box mt-1 d-flex col-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+                        <h6 class="date  col-6 col-sm-6 col-md-6 col-lg-6"><i class="fa fa-clock-o clock-icon"></i> {{ data.dateTime.toMillis() | date:'MMMM d, y'}}</h6>
+                        <div  class="social-icons-box d-flex  col-6 col-sm-6 col-md-6 col-lg-6  nopadding">
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/whatsapp.png"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/facebook.png"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/twitter.png"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/instagram.jpg"></a>
+                          <a> <img class="social-icons-img img-responsive" src="assets/img/youtube.png"></a>
+                        </div>      
+                    </div>
+                <hr/>    
+                </div>
+                <!-- End of Right Headline Section -->
+            </div>
+            <!-- End of Right News Section -->
+        </div>
+        <!-- End Of Right Box-->
+    </div>
+    <!-- End Of Main Box -->
+</div>
+<!-- End Of Container -->
+<app-footer></app-footer>

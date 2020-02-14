@@ -1,0 +1,89 @@
+<app-header class="header"></app-header>
+<div class="container-fluid main-box">
+  <div class="row box">
+    <div class="col-lg-2 adv-box nopadding" >
+          <img class="adv-img img-responsive" src="assets/img/ad.jpg">
+    </div>
+    <div class="col-lg-7 box1">
+      <div class="nav-links d-flex mx-2 nopadding">
+        <a style="padding-left:0" class="mr-2" (click)="goHome()">Home</a>
+        <a (click)="gotoCategory(NwzCatgry)">{{NwzCatgry}}</a>
+        <a style="border-right:none;pointer-events:none;color: #2f07be;">{{NwzSubCatgry}}</a>
+      </div>
+      <h3 class="headline mt-4 col-sm-12 col-md-12 col-lg-12 mt-2 text-justify">{{headlineData}}</h3>
+        <div class=" date-n-social-icons-box d-flex mt-3 col-12 col-sm-12 col-md-12 col-lg-12 nopadding">
+            <h6 class="date mt-3 col-5 col-sm-6 col-md-5 col-lg-5">
+            <i class="fa fa-clock-o" style="font-size:14px;color:red"></i> {{dataTimeData.toMillis() | date:'MMMM d, y'}}
+          </h6>
+          <div class="social-icons-box mt-3 col-7 col-sm-6 col-md-7 col-lg-7 d-inline nopadding">
+             <a > <img class="social-icons-img img-responsive" src="assets/img/youtube.png"></a>
+             <a> <img class="social-icons-img img-responsive" src="assets/img/instagram.jpg"></a>
+             <a> <img class="social-icons-img img-responsive" src="assets/img/twitter.png"></a>
+             <a> <img class="social-icons-img img-responsive" src="assets/img/facebook.png"></a>
+             <a> <img class="social-icons-img img-responsive" src="assets/img/whatsapp.png"></a>
+          </div>
+        </div>
+      
+      <div class=" col-sm-12 mt-4  nopadding">
+        <img class="news-img nopadding" src={{imageUploadData}}>
+      </div>
+      <p class="pt-4 text-justify"> {{paragraphData }} </p>
+       <hr/>
+       <h5 style="color:black"> See Video :</h5>
+      <div class="videos-section mt-2 mb-4">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dYAsMuijQ1A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-lg-3 box2">
+      <div class="Entermnt-section">
+        <h6 class="mt-4 ">Entertainment</h6>
+        <div class="right-part news1">
+          <img class="right-part-img mt-4" src="assets/img/firstimage.jpg">
+          <h5 class="col-sm-12 col-md-12 col-lg-12 mt-4 text-justify">JNU Violence LIVE: Nithayanand Rai gives ABVP
+            clean chit while probe
+            still on</h5>
+          <p class="mt-2">दीपिका पादुकोण के इस कदम को लेकर भी जनता दो फांक में बंट गई है.</p>
+          <p><i class="fa fa-clock-o" style="font-size:14px;color:red"></i> January 07, 2020 4:03 PM
+            &nbsp;&nbsp;&nbsp;<i class="fa fa-share-square-o" aria-hidden="true"></i></p>
+          <hr />
+        </div>
+
+        <div class="right-part news2">
+          <img class="right-part-img mt-4" src={{imageUploadData}}>
+          <h5 class="col-sm-12 col-md-12 col-lg-12 mt-4 text-justify">JNU Violence LIVE: Nithayanand Rai gives ABVP
+            clean chit while probe
+            still on</h5>
+          <p class="mt-2">दीपिका पादुकोण के इस कदम को लेकर भी जनता दो फांक में बंट गई है.</p>
+          <p><i class="fa fa-clock-o" style="font-size:14px;color:red"></i> January 07, 2020 4:03 PM
+            &nbsp;&nbsp;&nbsp;<i class="fa fa-share-square-o" aria-hidden="true"></i></p>
+          <hr />
+        </div>
+
+        <div class="right-part news2">
+          <img class="right-part-img mt-4" src="assets/img/firstimage.jpg">
+          <h5 class="col-sm-12 col-md-12 col-lg-12 mt-4 text-justify">JNU Violence LIVE: Nithayanand Rai gives ABVP
+            clean chit while probe
+            still on</h5>
+          <p class="mt-2">दीपिका पादुकोण के इस कदम को लेकर भी जनता दो फांक में बंट गई है.</p>
+          <p><i class="fa fa-clock-o" style="font-size:14px;color:red"></i> January 07, 2020 4:03 PM
+            &nbsp;&nbsp;&nbsp;<i class="fa fa-share-square-o" aria-hidden="true"></i></p>
+          <hr />
+        </div>
+
+        <div class="right-part news2">
+          <img class="right-part-img mt-4" src="assets/img/firstimage.jpg">
+          <h5 class="col-sm-12 col-md-12 col-lg-12 mt-4 text-justify">JNU Violence LIVE: Nithayanand Rai gives ABVP
+            clean chit while probe
+            still on</h5>
+          <p class="mt-2">दीपिका पादुकोण के इस कदम को लेकर भी जनता दो फांक में बंट गई है.</p>
+          <p><i class="fa fa-clock-o" style="font-size:14px;color:red"></i> January 07, 2020 4:03 PM
+            &nbsp;&nbsp;&nbsp;<i class="fa fa-share-square-o" aria-hidden="true"></i></p>
+          <hr />
+        </div>
+
+        <div class="read-more-box"><button>Read More</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

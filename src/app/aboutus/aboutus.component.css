@@ -1,0 +1,78 @@
+/*******************start of navigation bar************************/
+/*************navigation bar**************************/
+#header{
+    position: fixed;
+    width:100%;
+    top:0;
+    z-index:9999;  
+    /* background-color: #000000; */
+}
+.topnav a:hover {
+    border-bottom: 3px solid red;
+}
+
+a:hover{
+    cursor: pointer;
+}
+/* .navbar{
+    background-color: aqua;
+} */
+.nopadding{
+    padding: 0 !important;
+}
+.nav-item .nav-link{
+    color: #ffd400;
+    font-size: 17px;
+}
+.navbar .aaj-tak-title{
+    color:#ffd400;
+    line-height: 40px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+}
+.navbar .aaj-tak-title .aaj-tak-logo{
+    width:70px;
+    height:50px;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+    color:white;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 991px) {
+     .nav-item{
+         margin-left: 60px;
+         width: 90px;
+         text-align: left;
+     }
+     
+     .nav-link:hover{
+         border-bottom: 3px solid red;
+         width: fit-content;
+     }
+}
+/**********************end of navigation bar*****************************/
+/*******************end of navigation bar************************/
+
+
+.regform{
+    background-image: url(/assets/img/back.jpg);
+    /* background-image: url(/assets/img/istockphoto-945172204-612x612.jpg); */
+    /* background-color: #ffd400; */
+    margin-top: 60px;
+}
+
+mat-form-field{
+
+      background-color: white;
+      height: 50px;   
+      /* border: 1px solid #ced4da; */
+      border-radius: .25rem;  
+}
+mat-form-field input{
+    color:rgb(8, 8, 8); 
+    width:200px;
+    padding-top: 0 !important;
+    top:0 !important;
+}
