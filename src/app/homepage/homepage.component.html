@@ -3,8 +3,8 @@
     <div class="container-fluid nopadding bg-dark  ">
       <nav class="navbar  navbar-expand-lg navbar-dark nopadding">
         <!-- <img class="aaj-tak-logo" src="assets/img/new2-removebg-preview.png"> -->
-        <a class="navbar-brand pl-5 aaj-tak-title">AAJ TAK</a>
-        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <a class="navbar-brand pl-5 aaj-tak-title">HELP CHILD NGO</a>
+        <button class="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon text-white"></span>
         </button>
@@ -12,19 +12,19 @@
         <div class="collapse py-2 navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto topnav">
             <li class="nav-item active">
-              <a class="nav-link" (click)="scrollToElement(home)">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" (click)="scrollToElement(home)" data-toggle="collapse" data-target=".navbar-collapse.show">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="scrollToElement(about)">ABOUT US</a>
+              <a class="nav-link" (click)="scrollToElement(about)" data-toggle="collapse" data-target=".navbar-collapse.show" >ABOUT US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="scrollToElement(blog)">BLOG</a>
+              <a class="nav-link" (click)="scrollToElement(blog)" data-toggle="collapse" data-target=".navbar-collapse.show">BLOG</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="scrollToElement(testimonial)">TESTIMONIAL</a>
+                <a class="nav-link" (click)="scrollToElement(testimonial)" data-toggle="collapse" data-target=".navbar-collapse.show">TESTIMONIAL</a>
               </li>
             <li class="nav-item ">
-              <a class="nav-link" (click)="scrollToElement(footer)">CONTACT US</a>
+              <a class="nav-link" (click)="scrollToElement(footer)" data-toggle="collapse" data-target=".navbar-collapse.show">CONTACT US</a>
             </li>
             
 <!--             
@@ -32,7 +32,7 @@
               <a class="nav-link btn btn-primary text-white" type="button" href="#" data-toggle="modal"
                 data-target="#myModal">Sign In</a>
             </li> -->
-            <li class="nav-item pr-5">
+            <li class="nav-item mr-5">
               <a class="nav-link btn btn-warning text-dark" type="button" (click)="gotoregisterForm()" data-toggle="modal"
                 data-target="#myModal ">Register</a>
             </li>
@@ -89,7 +89,7 @@
             <h5>CRY is a Great Place to Work - CertifiedTM</h5>
             <div class="donate-box">
                 <div class="donate-box-inner">
-                     <p>Donate Now</p>
+                     <p class="mt-1">Donate Now</p>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
 
 </div>
 
-<div  #about class="aboutus my-1   ">
+<div  #about class="aboutus my-1 pb-2  ">
     <h3 class="text-center">About Us</h3>
     <p>Central India Public School (CIPS) is one of the leading CBSE schools in Nagpur established in 2003. It has been just over a decade but school's popularity has skyrocketed.</p>
     <p>The journey for CIPS began with Panchavati Bahu Uddeshiya Sanstha (Trust under which the school is established) started with an intention to provide education to everyone. Mr. V. S. Tiwari, President of the Sanstha and an educationist realized that good educational institutes are a necessity if society is to progress. He served for 46 years in the field of education as a teacher to principal.</p>
@@ -108,7 +108,7 @@
 </div>
 
 <!-- start of blog -->
-<section #blog class="blog-me  py-4 mb-1 " id="blog">
+<section #blog class="blog-me mb-1 mt-0 py-4" id="blog">
   <div class="container ">
      <div class="row">
         <div class="col-xl-6 mx-auto text-center">
@@ -241,9 +241,9 @@
 <footer #footer id="dk-footer" class="dk-footer">
   <div class="container">
       <div class="row">
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-8 col-lg-4 co-sm-12">
               <div class="dk-footer-box-info">
-                  <a href="index.html" class="footer-logo">
+                  <a href="index.html" class="footer-logo pt-2">
                       <img src="assets/img/new2.jpg" alt="footer_logo" class="img-fluid">
                   </a>
                   <p class="footer-info-text">
@@ -283,14 +283,14 @@
               </div>
               <!-- End Footer info -->
               <div class="footer-awarad">
-                  <img src="images/icon/best.png" alt="">
+                  <img src="assets/img/new2.jpg" alt="">
                   <p>Best Design Company 2019</p>
               </div>
           </div>
           <!-- End Col -->
-          <div class="col-md-12 col-lg-8">
-              <div class="row">
-                  <div class="col-md-6">
+          <div class="col-md-12 col-lg-8 col-sm-12 ">
+              <div class="row mob-n-address-box">
+                  <div class="col-md-6 col-sm-6 ">
                       <div class="contact-us">
                           <div class="contact-icon">
                               <i class="fa fa-map-o" aria-hidden="true"></i>
@@ -305,7 +305,7 @@
                       <!-- End Contact Us -->
                   </div>
                   <!-- End Col -->
-                  <div class="col-md-6">
+                  <div class="col-md-6 col-sm-6">
                       <div class="contact-us contact-us-last">
                           <div class="contact-icon">
                               <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
@@ -323,7 +323,7 @@
               </div>
               <!-- End Contact Row -->
               <div class="row">
-                  <div class="col-md-12 col-lg-6">
+                  <div class="col-md-6 col-lg-6">
                       <div class="footer-widget footer-left-widget">
                           <div class="section-heading">
                               <h3>Useful Links</h3>
@@ -361,7 +361,7 @@
                       <!-- End Footer Widget -->
                   </div>
                   <!-- End col -->
-                  <div class="col-md-12 col-lg-6">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
                       <div class="footer-widget">
                           <div class=" section-heading-subscribe ">
                               <h3>Subscribe</h3>

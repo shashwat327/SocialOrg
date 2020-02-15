@@ -1,11 +1,9 @@
-body {
-			background-color: #d7d6d3;
-			font-family:'verdana';
-		}
+
+        
 		.id-card-holder {
 			width: 225px;
-		    padding: 4px;
-		    margin: 0 auto;
+			padding: 4px;
+			margin: 0 auto;
 		    background-color: #1f1f1f;
 		    border-radius: 5px;
 		    position: relative;
@@ -36,7 +34,7 @@ body {
 			background-color: white;
 			border-radius: 10px;
 			text-align: center;
-			box-shadow: 0 0 1.5px 0px #b9b9b9;
+			/* box-shadow: 0 0 1.5px 0px #b9b9b9; */
 		}
 		.id-card img {
 			margin: 0 auto;
@@ -122,9 +120,9 @@ body {
 		.id-card-tag {
 			width: 0;
 			height: 0;
-			border-left: 100px solid transparent;
-			border-right: 100px solid transparent;
-			border-top: 100px solid #0958db;
+			border-left: 60px solid transparent;
+			border-right: 60px solid transparent;
+			border-top: 80px solid #0958db;
 			margin: -10px auto -30px auto;
 		}
 		.id-card-tag:after {
@@ -134,10 +132,10 @@ body {
 		    height: 0;
 		    border-left: 50px solid transparent;
 		    border-right: 50px solid transparent;
-		    border-top: 100px solid #d7d6d3;
+		    border-top: 80px solid white;
 		    margin: -10px auto -30px auto;
 		    position: relative;
-		    top: -130px;
+		    top: -100px;
 		    left: -50px;
 		}
 		.nopadding{
@@ -155,4 +153,16 @@ body {
 			/* background-color: crimson; */
 			text-align: left;
 			margin-right: 40px;
+		}
+
+ 		table{
+			margin-left: 30px;;
+ 		}
+		.keys{
+			width: 40px;
+			/* background-color: brown; */
+			text-align: left;
+		}
+		.values{
+			text-align:left;
 		}

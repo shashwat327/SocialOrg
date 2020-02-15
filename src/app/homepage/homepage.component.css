@@ -64,114 +64,7 @@ a:hover{
     height:100%;
 }
 
-@media only screen and (max-width: 400px) { 
 
-  
-  .carousel-inner .carousel-item img{
-    width:100%;
-   }
-    
-    #demo{
-      height:100px !important;
-    }
-    .box1 h5{
-      padding-top:20px !important;
-    }
-  
-
-}
-@media only screen and (max-width: 600px)  { 
-
-  #demo{ 
-    height:auto !important;
-    width:auto;
-  }
-
-  .carousel-inner .carousel-item img{
-    width:100%;
-    height:100%;
-   }
-.carousel-indicators{
-    bottom: -10px !important;
-}
-
-.box1,.box2,.box3{
-  height:150px !important;
-}
-.aboutus{
-  padding-left: 30px !important;
-  padding-right: 30px !important;
-}
-.box3 h5,.box2 h5{
-  padding-top:40px !important;
-}
-
-}
-
-@media only screen and (min-width: 601px) { 
-
-  
-  
- .aboutus{
-  padding-left: 30px !important;
-  padding-right: 30px !important;
-}
-.box1,.box2,.box3{
-  height:250px !important;
-}
-}
-
-@media only screen and (min-width: 786px) { 
-  .aboutus{
-    padding-left: 60px !important;
-    padding-right: 60px !important;
-  }
-  } 
-
-  @media only screen and (max-width: 786px) { 
-    .blog-img img{
-      height:200px;
-      
-   }  
-   .single-blog{
-    margin-top: 10px;
-   }
-   .section-title{
-     padding-top:10px !important;
-   }
-   
-    }
-@media only screen and (max-width: 992px) { 
-#demo{
-  margin-top:54px;
-}
-.dk-footer .contact-us.contact-us-last{
-  margin-left:0px !important;
- }
- .section-heading-subscribe{
-  margin-left:73px !important;
- }
- .footer-widget p{
-   margin-left: 30px !important;
-   margin-top:10px;
- }
- .aboutus h3{
-   margin-top:10px !important;
- }
- h2{
-   margin: 10px 15px;
- }
- .testimonial-box{
-   padding: 0px !important;
- }
-}
-
-@media only screen and (min-width: 992px) { 
-  .aboutus{
-    padding-left: 100px !important;
-    padding-right: 100px !important;
-  }
-}
 /*********end of slider********/
 
 /*****************start of balck and yellow box**************************/
@@ -831,10 +724,138 @@ p {
 /*********end of footer*****************/
 
 
-@media only screen and (max-width: 600px) { 
 
-  #demo{
-    height:200px;
+/*******************media queries****************************/
+@media only screen and (max-width: 400px) { 
+
+  
+  .carousel-inner .carousel-item img{
+    width:100%;
+   }
+    
+    #demo{
+      height:100px !important;
+    }
+    .box1 h5{
+      padding-top:20px !important;
+    }
+  
+
+}
+@media only screen and (max-width: 600px)  { 
+
+  #demo{ 
+    height:auto !important;
+    width:auto;
   }
 
+  .carousel-inner .carousel-item img{
+    width:100%;
+    height:100%;
+   }
+.carousel-indicators{
+    bottom: -10px !important;
+}
+
+.box1,.box2,.box3{
+  height:150px !important;
+}
+.aboutus{
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+.box3 h5,.box2 h5{
+  padding-top:40px !important;
+}
+
+}
+
+@media only screen and (min-width: 601px) { 
+ .aboutus{
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+ }
+}
+
+@media only screen and (min-width: 786px) { 
+  .aboutus{
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+  }
+  } 
+
+  @media only screen and (max-width: 786px) { 
+    .blog-img img{
+      height:200px;
+      
+   }  
+   .single-blog{
+    margin-top: 10px;
+   }
+  
+   /* .section-title{
+     padding-top:10px !important;
+   } */
+   .footer-left-widget{
+     padding-left: 0px;
+   }
+   
+    }
+
+    @media only screen and (min-width:601px) and (max-width: 786px) {
+      .box1,.box2,.box3{
+        height:250px !important;
+      }
+      
+    }      
+      
+@media only screen and (max-width: 992px) { 
+#demo{
+  margin-top:54px;
+}
+
+ .section-heading-subscribe{
+  /* margin-left:73px !important; */
+  margin-left:auto !important;
+  margin-right:auto !important;
+ }
+ .footer-widget p{
+  margin-left: 0px !important;
+  margin-top:10px;
+}
+ .footer-widget li{
+  margin-left: 0px !important;
+}
+ /* .aboutus h3{
+   margin-top:10px !important;
+ } */
+ h2{
+   margin: 10px 15px;
+ }
+ .testimonial-box{
+   padding: 0px !important;
+ }
+ .dk-footer-box-info{
+   padding: 0 !important;
+ }
+ .mob-n-address-box{
+   display:flex;
+ }
+ .footer-awarad{
+   margin-top: 197px;
+ }
+ .dk-footer .contact-us{
+   padding-left: 0px !important;
+   margin-top: 12px;
+ }
+ .dk-footer .contact-us.contact-us-last{
+  margin-left:0px !important;
+ }
+}
+
+@media only screen and (min-width: 992px) { 
+  .aboutus{
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
 }

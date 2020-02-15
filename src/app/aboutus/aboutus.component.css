@@ -69,6 +69,7 @@ mat-form-field{
       height: 50px;   
       /* border: 1px solid #ced4da; */
       border-radius: .25rem;  
+      width:130px;
 }
 mat-form-field input{
     color:rgb(8, 8, 8); 

@@ -36,8 +36,16 @@ export class AboutusComponent implements OnInit {
       address: new FormControl("",Validators.required),  
       })
   }
+//   private String toDate(long timestamp) {
+//     Date date = new Date(timestamp * 1000);
+//     return new SimpleDateFormat("yyyy-MM-dd").format(date);
+// }
 
   submitform(value){
+    localStorage.setItem("dob",value.date)
+    localStorage.setItem("mobile",value.mbno);
+    localStorage.setItem("email",value.email);
+    localStorage.setItem("city",value.city);
     this.ngxService.start();
     if(this.imageUploadUrl){
       value.imgUpload = this.imageUploadUrl;

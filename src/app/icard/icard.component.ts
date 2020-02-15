@@ -7,13 +7,21 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./icard.component.css']
 })
 export class IcardComponent implements OnInit {
+  dob: string;
+  mob: string;
+  email: string;
+  city: string;
 
 
  
 
   constructor() { }
-
+ 
   ngOnInit() {
+   this.dob= localStorage.getItem("dob");
+   this.mob= localStorage.getItem("mobile");
+   this.email= localStorage.getItem("email");
+    this.city= localStorage.getItem("city");
   }
  
   downloadImage(){
