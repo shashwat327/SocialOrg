@@ -1,4 +1,5 @@
-<div  class="id-card-tag"></div>
+<div class="background ">
+	<div  class="id-card-tag"></div>
 	<div class="id-card-tag-strip"></div>
 <div >	
 	<div class="id-card-hook"></div>
@@ -9,12 +10,13 @@
 				<!-- <img src="assets/img/aajtak-removebg-preview.png"> -->
 				<h2 class="pt-2">IDENTITY CARD</h2>
 			  </div>
-			  <div class="photo">
-				<img src="assets/img/passport.jpg">
+			  <div class="photo" >
+				<!-- <img src="{{image}} | safe: 'html'"> -->
+				<img [src]=" image " >
 			</div>
 			</div>
 			
-			<h2 class="mt-5">Maria Sebastian</h2>
+			<h2 class="mt-5">{{ firstname + " " + lastname }} </h2>
 			
 			<!-- <div class="d-flex pl-4">
 				<h6>ID NO&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</h6>
@@ -48,11 +50,11 @@
 		    <table>
 				<tr>
 					<td class="keys"> <h6>ID NO</h6></td>
-					<td class="values"> <h6>:&nbsp;&nbsp;123456</h6></td>
+					<td class="values"> <h6>:&nbsp;&nbsp;{{id}}</h6></td>
 				</tr>
 				<tr>
 					<td class="keys"> <h6>DOB</h6></td>
-					<td class="values"> <h6>:&nbsp;&nbsp;{{dob}}</h6></td>
+					<td class="values"> <h6>:&nbsp;&nbsp;{{dob | date:'MM/dd/yyyy'}}</h6></td>
 				</tr>
 				<tr>
 					<td class="keys"> <h6>Mobile</h6></td>
@@ -79,4 +81,6 @@
 </div>
 <br>
 <br>
-<button (click)="downloadImage()">Download</button>
+<button (click)="downloadImage()" >Download</button>
+<button (click)="gotoHome()" >Home</button>
+</div>

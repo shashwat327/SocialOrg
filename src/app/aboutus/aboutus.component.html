@@ -23,7 +23,7 @@
 <!-- start of navigation bar -->
 <div class="container-fluid regform mb-1">
     <div class="row justify-content-center ">
-    <div class="col-md-8">
+    <div class="col-md-7">
     <div class="card my-3">
     <header class="card-header">
         <h4 class="card-title mt-2">Sign up</h4>
@@ -33,7 +33,7 @@
         <div class="form-row">
             <div class="col form-group">
                 <label>First name </label>   
-                  <input [formControlName]="'firstname'" name="firstname" type="text" class="form-control" placeholder="">
+                  <input [formControlName]="'firstname'" name="firstname" type="text" class="form-control" placeholder="Enter Your First Name" required>
             </div> <!-- form-group end.// -->
             <div class="col form-group">
                 <label>Last name</label>
@@ -95,14 +95,14 @@
         </div> <!-- form-row.// -->
         <div class="form-group">
             <label>Address</label>
-            <input [formControlName]="'address'" name="address" class="form-control" type="password">
+            <input [formControlName]="'address'" name="address" class="form-control" type="text">
         </div> <!-- form-group end.// --> 
         <div class="form-group d-flex ">
             <label  for="name"> Upload Image :</label>
             <input style="height: 44px"  name="imgUpload"  (change)="upload($event)" accept=".png,.jpg"  class="col-md-3" class="col-md-4" type="file" class="form-control" name="uname1" required="">
           </div> 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+            <button  type="submit" class="btn btn-primary btn-block"> Register  </button>
         </div> <!-- form-group// -->      
         <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
     </form>

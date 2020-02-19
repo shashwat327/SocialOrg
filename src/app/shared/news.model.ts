@@ -1,10 +1,12 @@
 export class News {
         id: string;
-        headline: string;
-        description: string;
-        category:string;
-        subcategory:string;
-        paragraph:string;
-        imgUpload:string; 
-        dateTime: Date; 
+        firstname: string;
+        lastname: string;
+        email:string;
+        mbno:string;
+        gender:string;
+        date:Date; 
+        city: string; 
+        country:string;
+        address:string
 }

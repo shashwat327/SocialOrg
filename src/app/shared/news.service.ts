@@ -7,9 +7,14 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class NewsService {
 
   constructor(private firestore: AngularFirestore) { }
+
+
+  getData()
+  {
+    return this.firestore.collection('registration').snapshotChanges();
+  }
  
   getIndia()
-  
   {
     return this.firestore.collection('india').snapshotChanges();
   }
