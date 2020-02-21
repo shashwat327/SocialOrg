@@ -76,4 +76,29 @@ mat-form-field input{
     width:200px;
     padding-top: 0 !important;
     top:0 !important;
+    
+}
+mat-datepicker-toggle{
+    z-index: 5;
+}
+.crop-img{
+    height: 300px;
+    border-left: 1px solid black;
+}
+.preview{
+    border-right: 1px solid black;
+}
+
+.modal-content
+{
+    top: 54px;
+}
+
+@media only screen and (max-width: 768px) {
+    .preview{
+        display: none;
+    }
+    .crop-img{
+        height: 200px;
+    }
 }

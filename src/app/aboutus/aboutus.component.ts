@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { NewsService } from '../shared/news.service';
 import { News } from '../shared/news.model';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 
 @Component({
@@ -14,6 +15,12 @@ import { News } from '../shared/news.model';
   styleUrls: ['./aboutus.component.css']
 })
 export class AboutusComponent implements OnInit {
+
+  title = 'angular-image-uploader';
+ 
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+  display='none';
  
   testform:FormGroup;
   imageUploadUrl: any;
@@ -21,6 +28,7 @@ export class AboutusComponent implements OnInit {
   base64textString: string;
   imageShow: string;
   digits: any;
+  cropimgShow :boolean = false;
 
     constructor(private router: Router, 
     private formBuilder:FormBuilder, 
@@ -42,6 +50,8 @@ export class AboutusComponent implements OnInit {
       country: new FormControl("",Validators.required),
       address: new FormControl("",Validators.required),  
       })
+
+     this.getloginData();
   }
 //   private String toDate(long timestamp) {
 //     Date date = new Date(timestamp * 1000);
@@ -50,17 +60,19 @@ export class AboutusComponent implements OnInit {
 
   submitform(value){
     // this.imageShow="'data:image/jpg;base64,'"+this.base64textString;
-    this.imageShow=this.base64textString;
-    localStorage.setItem("imageShow",this.imageShow); 
+    // this.imageShow=this.base64textString;
+    localStorage.setItem("imageShow",this.croppedImage); 
     localStorage.setItem("dob",value.date)
     localStorage.setItem("mobile",value.mbno);
     localStorage.setItem("email",value.email);
     localStorage.setItem("city",value.city);
     localStorage.setItem("firstname",value.firstname);
     localStorage.setItem("lastname",value.lastname);
-    this.digits = Math.floor(Math.random() * 9000000000) + 1000000000;
+    // this.digits = Math.floor(Math.random() * 9000000000) + 1000000000;
+    this.digits = "SV"+1000+this.list.length;
     localStorage.setItem("id",this.digits );
-
+    value.imgUpload = this.croppedImage;
+    value.id = this.digits;
     this.ngxService.start();
     // if(this.imageUploadUrl){
     //   value.imgUpload = this.imageShow;
@@ -75,48 +87,48 @@ export class AboutusComponent implements OnInit {
 
 
   getloginData(){
-
     this.service.getData().subscribe(actionArray => {
       this.list = actionArray.map(a => {
         const data = a.payload.doc.data() as News;
         data.id = a.payload.doc.id;
-        console.log(data);
+        // console.log(data);
         return data; 
       });
-      console.log(JSON.stringify(this.list)); 
+      // console.log(JSON.stringify(this.list.length)); 
+      console.log(this.list.length); 
    });
   }
 
-  upload(event) {
-    this.ngxService.start();
-    console.log("inside");
+  // upload(event) {
+  //   this.ngxService.start();
+  //   console.log("inside");
 
-        var files = event.target.files;
-        var file = files[0];
+  //       var files = event.target.files;
+  //       var file = files[0];
 
-        if (files && file) {
-             var reader = new FileReader();
-             reader.onload =this.handleFile.bind(this);
-             reader.readAsBinaryString(file);
-    // const randomId = Math.random().toString(36).substring(2);
-    // this.afStorage.upload("HelpChild/" + event.target.files[0].name + randomId, event.target.files[0]).then(rst => {
-    //   rst.ref.getDownloadURL().then(url => {
-    //     console.log(url);
+  //       if (files && file) {
+  //            var reader = new FileReader();
+  //            reader.onload =this.handleFile.bind(this);
+  //            reader.readAsBinaryString(file);
+  //   // const randomId = Math.random().toString(36).substring(2);
+  //   // this.afStorage.upload("HelpChild/" + event.target.files[0].name + randomId, event.target.files[0]).then(rst => {
+  //   //   rst.ref.getDownloadURL().then(url => {
+  //   //     console.log(url);
 
-    //     this.imageUploadUrl = url;
-        this.ngxService.stop();
+  //   //     this.imageUploadUrl = url;
+  //       this.ngxService.stop();
         
-      // })
-    }
-  }
+  //     // })
+  //   }
+  // }
 
   
-  handleFile(event) {
-    var binaryString = event.target.result;
-           this.base64textString= btoa(binaryString);
-           console.log(btoa(binaryString));
-           console.log(  this.base64textString);
-   }
+  // handleFile(event) {
+  //   var binaryString = event.target.result;
+  //          this.base64textString= btoa(binaryString);
+  //          console.log(btoa(binaryString));
+  //          console.log(  this.base64textString);
+  //  }
 
 
   
@@ -124,4 +136,38 @@ export class AboutusComponent implements OnInit {
     this.router.navigate(['']);
   }
  
+  fileChangeEvent(event: any): void {
+    console.log("inside" + JSON.stringify(event));
+    this.imageChangedEvent = event;
+   
+    if(event){
+      this.cropimgShow=true;
+      // document.getElementById("myModal").style.display='block';
+      this.display='block';
+    }
+    else{
+      this.cropimgShow= false;
+    }
+}
+
+imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+}
+   
+    closeCropBox(){
+      console.log("kasfmas")
+      this.display='none';
+    }
+
+imageLoaded() {
+    // show cropper
+}
+cropperReady() {
+    // cropper ready
+}
+loadImageFailed() {
+    // show message
+}
+
+
 }

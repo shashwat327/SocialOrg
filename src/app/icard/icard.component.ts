@@ -28,7 +28,8 @@ export class IcardComponent implements OnInit {
     this.id = localStorage.getItem("id");
     this.images=localStorage.getItem("imageShow");
     // console.log(this.images); 
-    this.image =this.domSanitizer.bypassSecurityTrustUrl("data:Image/*;base64,"+this.images);
+    // this.image =this.domSanitizer.bypassSecurityTrustUrl("data:Image/*;base64,"+this.images);
+    this.image =this.domSanitizer.bypassSecurityTrustUrl(this.images);
     // console.log(this.image); 
     this.dob= localStorage.getItem("dob");
     this.mob= localStorage.getItem("mobile");

@@ -22,7 +22,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import html2canvas from 'html2canvas';
- 
+ import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -78,7 +78,7 @@ import { IcardComponent } from './icard/icard.component';
     AngularFirestoreModule,  AngularFireStorageModule,
     OwlDateTimeModule, OwlNativeDateTimeModule,  NgxUiLoaderModule,
     MatDatepickerModule, MatNativeDateModule, NgMultiSelectDropDownModule.forRoot(),
-    NgbModule, NgImageSliderModule, AngularFireAuthModule, 
+    NgbModule, NgImageSliderModule, AngularFireAuthModule, ImageCropperModule
    
   ],
   providers: [NewsService,AngularFireAuth],

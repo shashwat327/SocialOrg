@@ -4,7 +4,7 @@
   <div class="container-fluid nopadding bg-dark ">
     <nav class="navbar  navbar-expand-lg navbar-dark nopadding">
       <!-- <img class="aaj-tak-logo" src="assets/img/new2-removebg-preview.png"> -->
-      <a class="navbar-brand pl-5 aaj-tak-title">AAJ TAK</a>
+      <a class="navbar-brand pl-5 aaj-tak-title">HELP CHILD NGO</a>
       <button class="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon text-white"></span>
@@ -99,8 +99,91 @@
         </div> <!-- form-group end.// --> 
         <div class="form-group d-flex ">
             <label  for="name"> Upload Image :</label>
-            <input style="height: 44px"  name="imgUpload"  (change)="upload($event)" accept=".png,.jpg"  class="col-md-3" class="col-md-4" type="file" class="form-control" name="uname1" required="">
-          </div> 
+            <input style="height: 44px"  name="imgUpload"  (change)="fileChangeEvent($event)"    class="col-md-4" type="file" class="form-control" name="uname1" required="">
+        </div> 
+        <!-- <div class="row mt-2" >
+          <div class="text-center col-md-12">
+              <input type="file" (change)="fileChangeEvent($event)" />
+              (change)="upload($event)" 
+          </div>
+      </div> -->
+
+      <!-- <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModal">
+        Open modal
+      </button> -->
+
+      <!-- The Modal -->
+<div class="modal  bg-info" id="myModal"  *ngIf="cropimgShow" [ngStyle]="{'display':display}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Set I-CARD Photo</h4>
+        <button type="button" (click)="closeCropBox()"  class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row ">
+
+
+
+          <div class="text-center preview  col-md-4 " >
+            <h5>Preview</h5>
+            <img class="mt-2" [src]="croppedImage" />
+          </div>
+
+          <div class="text-center crop-img col-md-8 " >
+              <h5>Crop Image</h5>
+              <image-cropper 
+              [imageChangedEvent]="imageChangedEvent" 
+              [maintainAspectRatio]="true" 
+              [aspectRatio]="4 / 4"
+              [resizeToWidth]="100"
+              [resizeToHeight]="50" 
+              format="png" 
+              (imageCropped)="imageCropped($event)" 
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()" 
+              (loadImageFailed)="loadImageFailed()"></image-cropper>
+          </div>
+          
+      </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" (click)="closeCropBox()" class="btn btn-success" data-dismiss="modal">Done</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+        <!-- <div class="row">
+
+          <div class="col-sm-4 col-md-4 col-sm-2">
+            <h5>Preview</h5>
+            <img [src]="croppedImage" />
+          </div>
+
+          <div class="text-center crop-img col-md-6 col-sm-4" >
+              <h5>Crop Image To Set Icard</h5>
+              <image-cropper 
+              [imageChangedEvent]="imageChangedEvent" 
+              [maintainAspectRatio]="true" 
+              [aspectRatio]="4 / 4"
+              [resizeToWidth]="100"
+              [resizeToHeight]="50" 
+              format="png" 
+              (imageCropped)="imageCropped($event)" 
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()" 
+              (loadImageFailed)="loadImageFailed()"></image-cropper>
+          </div>
+          
+      </div> -->
         <div class="form-group">
             <button  type="submit" class="btn btn-primary btn-block"> Register  </button>
         </div> <!-- form-group// -->      
